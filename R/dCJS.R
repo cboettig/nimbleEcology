@@ -1,3 +1,5 @@
+nimbleOptions(experimentalEnableDerivs = TRUE)
+
 #' Cormack-Jolly-Seber distribution for use in \code{nimble} models
 #'
 #' \code{dCJS_**} and \code{rCJS_**} provide Cormack-Jolly-Seber capture-recapture
@@ -177,7 +179,7 @@ dCJS_ss <- nimbleFunction(
     if (log) return(logProbData)
     return(exp(logProbData))
     returnType(double(0))
-  }
+  }, enableDerivs = TRUE
 )
 
 #' @rdname dCJS
@@ -223,7 +225,7 @@ dCJS_sv <- nimbleFunction(
     if (log) return(logProbData)
     return(exp(logProbData))
     returnType(double())
-  }
+  }, enableDerivs = TRUE
 )
 
 
@@ -271,7 +273,7 @@ dCJS_vs <- nimbleFunction(
     if (log) return(logProbData)
     return(exp(logProbData))
     returnType(double())
-  }
+  }, enableDerivs = TRUE
 )
 
 
@@ -325,7 +327,7 @@ dCJS_vv <- nimbleFunction(
     }
     return(exp(logProbData))
     returnType(double())
-  }
+  }, enableDerivs = TRUE
 )
 
 #' @rdname dCJS
@@ -353,7 +355,7 @@ rCJS_ss <- nimbleFunction(
     }
     return(ans)
     returnType(double(1))
-  }
+  }, enableDerivs = TRUE
 )
 
 #' @rdname dCJS
@@ -383,7 +385,7 @@ rCJS_sv <- nimbleFunction(
     }
     return(ans)
     returnType(double(1))
-  }
+  }, enableDerivs = TRUE
 )
 
 #' @export
@@ -413,7 +415,7 @@ rCJS_vs <- nimbleFunction(
     }
     return(ans)
     returnType(double(1))
-  }
+  }, enableDerivs = TRUE
 )
 
 #' @rdname dCJS
@@ -445,7 +447,7 @@ rCJS_vv <- nimbleFunction(
     }
     return(ans)
     returnType(double(1))
-  }
+  }, enableDerivs = TRUE
 )
 
 

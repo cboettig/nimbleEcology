@@ -1,3 +1,4 @@
+nimbleOptions(experimentalEnableDerivs = TRUE)
 
 #' Occupancy distribution suitable for use in \code{nimble} models
 #'
@@ -132,7 +133,7 @@ dOcc_s <- nimbleFunction(
     prob_x <- exp(logProb_x_given_occupied) * probOcc + prob_x_given_unoccupied * (1 - probOcc)
     if (log) return(log(prob_x))
     return(prob_x)
-  }
+  }, enableDerivs = TRUE
 )
 
 #' @export
@@ -151,7 +152,7 @@ dOcc_v <- nimbleFunction(
     prob_x <- exp(logProb_x_given_occupied) * probOcc + prob_x_given_unoccupied * (1 - probOcc)
     if (log) return(log(prob_x))
     return(prob_x)
-  }
+  }, enableDerivs = TRUE
 )
 
 #' @export
@@ -167,7 +168,7 @@ rOcc_s <- nimbleFunction(
     u <- runif(1, 0, 1)
     if (u > probOcc) return(numeric(0, length = len))
     return(rbinom(len, prob = probDetect, size = 1))
-  }
+  }, enableDerivs = TRUE
 )
 
 #' @export

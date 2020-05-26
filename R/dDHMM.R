@@ -1,3 +1,5 @@
+nimbleOptions(experimentalEnableDerivs = TRUE)
+
 #' Dynamic Hidden Markov Model distribution for use in \code{nimble} models
 #'
 #' \code{dDHMM} and \code{dDHMMo} provide Dynamic hidden Markov model
@@ -190,7 +192,7 @@ dDHMM <- nimbleFunction(
     returnType(double())
     if (log) return(logL)
     return(exp(logL))
-  }
+  }, enableDerivs = TRUE
 )
 
 #' @export
@@ -223,7 +225,7 @@ dDHMMo <- nimbleFunction(
     returnType(double())
     if (log) return(logL)
     return(exp(logL))
-  }
+  }, enableDerivs = TRUE
 )
 
 #' @export
@@ -253,7 +255,7 @@ rDHMM <- nimbleFunction(
     }
   }
   return(ans)
-})
+}, enableDerivs = TRUE)
 # rDHMM <- nimbleFunction(
 #   run = function(n = integer(),    ## Observed capture (state) history
 #                  init = double(1), ## probabilities of state at time 1
@@ -309,7 +311,7 @@ rDHMMo <- nimbleFunction(
     }
   }
   return(ans)
-})
+}, enableDerivs = TRUE)
 # rDHMMo <- nimbleFunction(
 #   run = function(n = integer(),    ## Observed capture (state) history
 #                  init = double(1), ## probabilities of state at time 1

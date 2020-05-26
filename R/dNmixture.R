@@ -1,3 +1,5 @@
+nimbleOptions(experimentalEnableDerivs = TRUE)
+
 # dNmixture
 #' N-mixture distribution for use in \code{nimble} models
 #'
@@ -211,7 +213,7 @@ dNmixture_v <- nimbleFunction(
     if (log) return(logProb)
     else return(exp(logProb))
     returnType(double())
-  })
+  }, enableDerivs = TRUE)
 
 NULL
 #' @rdname dNmixture
@@ -294,7 +296,7 @@ rNmixture_v <- nimbleFunction(
 
     return(ans)
     returnType(double(1))
-})
+}, enableDerivs = TRUE)
 
 NULL
 #' @rdname dNmixture
@@ -315,4 +317,4 @@ rNmixture_s <- nimbleFunction(
 
     return(ans)
     returnType(double(1))
-})
+}, enableDerivs = TRUE)

@@ -1,3 +1,4 @@
+nimbleOptions(experimentalEnableDerivs = TRUE)
 #' Hidden Markov Model distribution for use in \code{nimble} models
 #'
 #' \code{dHMM} and \code{dHMMo} provide hidden Markov model
@@ -190,7 +191,7 @@ dHMM <- nimbleFunction(
     returnType(double())
     if (log) return(logL)
     return(exp(logL))
-  }
+  }, enableDerivs = TRUE
 )
 
 #' @export
@@ -224,7 +225,7 @@ dHMMo <- nimbleFunction(
     returnType(double())
     if (log) return(logL)
     return(exp(logL))
-  }
+  }, enableDerivs = TRUE
 )
 
 #' @export
@@ -264,7 +265,7 @@ rHMM <- nimbleFunction(
   }
 
   return(ans)
-})
+}, enableDerivs = TRUE)
 
 #' @export
 #' @rdname dHMM
@@ -302,7 +303,7 @@ rHMMo <- nimbleFunction(
   }
 
   return(ans)
-})
+}, enableDerivs = TRUE)
 
 
 

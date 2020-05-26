@@ -1,3 +1,5 @@
+nimbleOptions(experimentalEnableDerivs = TRUE)
+
 # dDynOcc
 #' Dynamic occupancy distribution for use in \code{nimble} models
 #' \code{dDynOcc_**} and \code{rDynOcc_**} provide dynamic occupancy
@@ -232,7 +234,7 @@ dDynOcc_vvm <- nimbleFunction(
     if (log) return(ll)
     else return(exp(ll))
     returnType(double(0))
-  }
+  }, enableDerivs = TRUE
 )
 
 #' @rdname dDynOcc
@@ -287,7 +289,7 @@ dDynOcc_vsm <- nimbleFunction(
     if (log) return(ll)
     else return(exp(ll))
     returnType(double(0))
-  }
+  }, enableDerivs = TRUE
 )
 
 #' @rdname dDynOcc
@@ -341,7 +343,7 @@ dDynOcc_svm <- nimbleFunction(
     if (log) return(ll)
     else return(exp(ll))
     returnType(double(0))
-  }
+  }, enableDerivs = TRUE
 )
 
 #' @rdname dDynOcc
@@ -396,7 +398,7 @@ dDynOcc_ssm <- nimbleFunction(
     if (log) return(ll)
     else return(exp(ll))
     returnType(double(0))
-  }
+  }, enableDerivs = TRUE
 )
 
 #' @rdname dDynOcc
@@ -424,7 +426,7 @@ rDynOcc_vvm <- nimbleFunction(
 
     return(val)
     returnType(double(2))
-  }
+  }, enableDerivs = TRUE
 )
 
 #' @rdname dDynOcc
@@ -452,7 +454,7 @@ rDynOcc_vsm <- nimbleFunction(
 
     return(val)
     returnType(double(2))
-  }
+  }, enableDerivs = TRUE
 )
 
 #' @rdname dDynOcc
@@ -480,7 +482,7 @@ rDynOcc_svm <- nimbleFunction(
 
     return(val)
     returnType(double(2))
-  }
+  }, enableDerivs = TRUE
 )
 
 #' @rdname dDynOcc
@@ -508,7 +510,7 @@ rDynOcc_ssm <- nimbleFunction(
 
     return(val)
     returnType(double(2))
-  }
+  }, enableDerivs = TRUE
 )
 
 NULL
@@ -563,7 +565,7 @@ dDynOcc_vvv <- nimbleFunction(
     if (log) return(ll)
     else return(exp(ll))
     returnType(double(0))
-  }
+  }, enableDerivs = TRUE
 )
 
 #' @rdname dDynOcc
@@ -617,7 +619,7 @@ dDynOcc_vsv <- nimbleFunction(
     if (log) return(ll)
     else return(exp(ll))
     returnType(double(0))
-  }
+  }, enableDerivs = TRUE
 )
 
 #' @rdname dDynOcc
@@ -670,7 +672,7 @@ dDynOcc_svv <- nimbleFunction(
     if (log) return(ll)
     else return(exp(ll))
     returnType(double(0))
-  }
+  }, enableDerivs = TRUE
 )
 
 #' @rdname dDynOcc
@@ -724,7 +726,7 @@ dDynOcc_ssv <- nimbleFunction(
     if (log) return(ll)
     else return(exp(ll))
     returnType(double(0))
-  }
+  }, enableDerivs = TRUE
 )
 
 
@@ -753,7 +755,7 @@ rDynOcc_vvv <- nimbleFunction(
 
     return(val)
     returnType(double(2))
-  }
+  }, enableDerivs = TRUE
 )
 
 #' @rdname dDynOcc
@@ -781,7 +783,7 @@ rDynOcc_vsv <- nimbleFunction(
 
     return(val)
     returnType(double(2))
-  }
+  }, enableDerivs = TRUE
 )
 
 #' @rdname dDynOcc
@@ -809,7 +811,7 @@ rDynOcc_svv <- nimbleFunction(
 
     return(val)
     returnType(double(2))
-  }
+  }, enableDerivs = TRUE
 )
 
 #' @rdname dDynOcc
@@ -837,7 +839,7 @@ rDynOcc_ssv <- nimbleFunction(
 
     return(val)
     returnType(double(2))
-  }
+  }, enableDerivs = TRUE
 )
 
 
@@ -892,7 +894,7 @@ dDynOcc_vvs <- nimbleFunction(
     if (log) return(ll)
     else return(exp(ll))
     returnType(double(0))
-  }
+  }, enableDerivs = TRUE
 )
 
 #' @rdname dDynOcc
@@ -945,7 +947,7 @@ dDynOcc_vss <- nimbleFunction(
     if (log) return(ll)
     else return(exp(ll))
     returnType(double(0))
-  }
+  }, enableDerivs = TRUE
 )
 
 #' @rdname dDynOcc
@@ -997,7 +999,7 @@ dDynOcc_svs <- nimbleFunction(
     if (log) return(ll)
     else return(exp(ll))
     returnType(double(0))
-  }
+  }, enableDerivs = TRUE
 )
 
 #' @rdname dDynOcc
@@ -1048,7 +1050,7 @@ dDynOcc_sss <- nimbleFunction(
     if (log) return(ll)
     else return(exp(ll))
     returnType(double(0))
-  }
+  }, enableDerivs = TRUE
 )
 
 
@@ -1077,7 +1079,7 @@ rDynOcc_vvs <- nimbleFunction(
 
     return(val)
     returnType(double(2))
-  }
+  }, enableDerivs = TRUE
 )
 
 #' @rdname dDynOcc
@@ -1105,7 +1107,7 @@ rDynOcc_vss <- nimbleFunction(
 
     return(val)
     returnType(double(2))
-  }
+  }, enableDerivs = TRUE
 )
 
 #' @rdname dDynOcc
@@ -1133,7 +1135,7 @@ rDynOcc_svs <- nimbleFunction(
 
     return(val)
     returnType(double(2))
-  }
+  }, enableDerivs = TRUE
 )
 
 #' @rdname dDynOcc
@@ -1161,7 +1163,7 @@ rDynOcc_sss <- nimbleFunction(
 
     return(val)
     returnType(double(2))
-  }
+  }, enableDerivs = TRUE
 )
 
 
